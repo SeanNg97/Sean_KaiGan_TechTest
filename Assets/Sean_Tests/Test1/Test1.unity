@@ -952,8 +952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  force: 60
-  mass: 50
+  force: 1
+  mass: 10
   stopPoint: {fileID: 891512875}
   rb: {fileID: 760692456}
 --- !u!1 &891512874
