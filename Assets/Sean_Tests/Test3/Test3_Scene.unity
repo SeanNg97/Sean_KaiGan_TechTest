@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 42513818}
   - component: {fileID: 42513817}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 586958056}
   - component: {fileID: 586958055}
   m_Layer: 0
-  m_Name: New VFX
+  m_Name: VFX_Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

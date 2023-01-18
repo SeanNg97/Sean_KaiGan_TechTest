@@ -8,6 +8,8 @@ namespace KaiganTest.Test4
         [SerializeField] private bool isStartSmoldering;
 
         [Header("Settings")]
+        [SerializeField] private float smoderingAppearSpeed = 0.1f;
+        [SerializeField] private float smoderingDisappearSpeed = 0.1f;
         [Range(0.0f, 1.0f)]
         [SerializeField] private float maxSmoderingValue;
         [Range(0.0f, 1.0f)]
@@ -39,7 +41,7 @@ namespace KaiganTest.Test4
             {
                 if (smoderingValue <= maxSmoderingValue)
                 {
-                    smoderingValue += Time.deltaTime;
+                    smoderingValue += Time.deltaTime * smoderingAppearSpeed;
                     _smoderingMaterial.SetFloat(heatNoise, smoderingValue);
                 }
             }
@@ -47,7 +49,7 @@ namespace KaiganTest.Test4
             {
                 if (smoderingValue >= minSmoderingValue)
                 {
-                    smoderingValue -= Time.deltaTime;
+                    smoderingValue -= Time.deltaTime * smoderingDisappearSpeed;
                     _smoderingMaterial.SetFloat(heatNoise, smoderingValue);
                 }
             }

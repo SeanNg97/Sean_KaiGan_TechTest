@@ -467,6 +467,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6057360056759578257, guid: 92a8e86cffe865448a67f53c45c44a27,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.606
+      objectReference: {fileID: 0}
     - target: {fileID: 6057360057314417627, guid: 92a8e86cffe865448a67f53c45c44a27,
         type: 3}
       propertyPath: m_Name
@@ -540,7 +545,12 @@ PrefabInstance:
     - target: {fileID: 6057360057314417631, guid: 92a8e86cffe865448a67f53c45c44a27,
         type: 3}
       propertyPath: fireRate
-      value: 0.5
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6057360057314417631, guid: 92a8e86cffe865448a67f53c45c44a27,
+        type: 3}
+      propertyPath: attackRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6057360057314417631, guid: 92a8e86cffe865448a67f53c45c44a27,
         type: 3}

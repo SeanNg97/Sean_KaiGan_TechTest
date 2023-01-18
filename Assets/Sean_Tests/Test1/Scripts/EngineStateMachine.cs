@@ -39,10 +39,6 @@ namespace KaiganTest.Test1
             //Calculation acceleration
             forwardAcceleration = force / mass;
             brakeDeceleration = -forwardAcceleration;
-
-            //Initialize
-            currentSpeed = 0;
-            currentSpeed += forwardAcceleration * 1.0f;
         }
 
         private void Update()
@@ -76,6 +72,7 @@ namespace KaiganTest.Test1
 
         private EngineState DetermineEngineState(float distanceToTarget, float currentSpeed, float maxSpeed)
         {
+            //Time from current position to destination
             timeTravel = Mathf.Max(distanceToTarget / (currentSpeed * currentSpeed), 0);
 
             //When travelling is going near to stop point, then start braking or distance between target is super near then brake
@@ -101,8 +98,7 @@ namespace KaiganTest.Test1
 
         private float GetSqrDistanceToTarget()
         {
-            Vector3 dir = stopPoint.position - transform.position;
-            return dir.sqrMagnitude;
+            return (stopPoint.position - transform.position).sqrMagnitude;
         }
     }
 }

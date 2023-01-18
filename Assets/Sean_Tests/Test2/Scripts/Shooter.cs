@@ -7,7 +7,8 @@ namespace KaiganTest.Test2
         [Header("Stats")]
         [SerializeField] private float bulletSpeed;
         [SerializeField] private float fireRate = 1f;
-        
+        [SerializeField] private float attackRange = 5f;
+
         [Header("Bullet")]
         [SerializeField] private Bullet bullet;
 
@@ -38,23 +39,38 @@ namespace KaiganTest.Test2
                 bulletSpeed,
                 out Vector3 interceptPosition))
                 {
-                    //Rotate turret to intercept position
-                    partToTurn.rotation = Quaternion.LookRotation(interceptPosition);
+                    if (interceptPosition != Vector3.zero)
+                    {
+                        //Rotate turret to intercept position
+                        partToTurn.rotation = Quaternion.LookRotation(interceptPosition);
 
-                    //Spawn Bullet
-                    Fire();
+                        //Spawn Bullet
+                        Fire();
+                    }
                 }
             }
         }
 
         private bool IsCanFire()
         {
+            if (GetSqrTargetDistance(shootPos.position, target.position) > attackRange * attackRange)
+            {
+                //Out of distance
+                return false;
+            }
+
             if (Time.time > fireRate + lastShot)
             {
                 lastShot = Time.time;
                 return true;
             }
+
             return false;
+        }
+
+        private float GetSqrTargetDistance(Vector3 selfPosition, Vector3 targetPosition)
+        {
+            return (targetPosition - selfPosition).sqrMagnitude;
         }
 
         private void Fire()
@@ -72,7 +88,7 @@ namespace KaiganTest.Test2
             float c = Vector3.Dot(direction, direction);
             float x = b * b - a * c;
 
-            //When getting very small and inaccurate,like target move too fast, then stop aiming
+            //When getting very small and inaccurate value,like target move too fast, then stop aiming
             if (x < 0.1f)
             {
                 interceptPosition = Vector3.zero;
@@ -105,6 +121,13 @@ namespace KaiganTest.Test2
 
             interceptPosition = timeWillMeet * direction + targetVelocity;
             return true;
+        }
+
+        //Used to check tank attack range
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
         }
     }
 }

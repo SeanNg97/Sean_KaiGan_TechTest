@@ -234,7 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374f0d8109445e24bba2950dc0c53a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartSmodering: 0
+  isStartSmoldering: 0
+  smoderingAppearSpeed: 0.15
+  smoderingDisappearSpeed: 0.15
   maxSmoderingValue: 0.45
   minSmoderingValue: 0
   smoderingMaterial: {fileID: 2100000, guid: ab255269263a4044d85b0e680a6599f8, type: 2}
@@ -271,7 +273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374f0d8109445e24bba2950dc0c53a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartSmodering: 0
+  isStartSmoldering: 0
+  smoderingAppearSpeed: 0.15
+  smoderingDisappearSpeed: 0.15
   maxSmoderingValue: 0.45
   minSmoderingValue: 0
   smoderingMaterial: {fileID: 2100000, guid: ab255269263a4044d85b0e680a6599f8, type: 2}
@@ -436,7 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374f0d8109445e24bba2950dc0c53a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartSmodering: 0
+  isStartSmoldering: 0
+  smoderingAppearSpeed: 0.15
+  smoderingDisappearSpeed: 0.15
   maxSmoderingValue: 0.45
   minSmoderingValue: 0
   smoderingMaterial: {fileID: 2100000, guid: ab255269263a4044d85b0e680a6599f8, type: 2}
